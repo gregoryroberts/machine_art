@@ -1,4 +1,13 @@
 #
+# Note: this code is a mix of my own and some from the linked pytorch tutorial (whether or in inspiration or copeid from there).
+# I have attempted to note main places in the code where I leaned most heavily on the tutorial, but it is possible I have missed
+# some parts.
+# The data provided for the images and the style are my own, but the VGG-19 network used is loaded in pretrained from pytorch.
+# To my knowledge, it is trained on ImageNet's database.  Link to pytorch tutorial:
+# https://pytorch.org/tutorials/advanced/neural_style_tutorial.html
+#
+
+#
 # System
 #
 import sys
@@ -238,7 +247,7 @@ for sunset_img_idx in range( 0, num_sunset_images ):
 	while epoch_idx[ 0 ] < num_epochs:
 
 		#
-		# Inspired by pytorch tutorial! This tutorial also helps pick content vs. style weights because
+		# Inspired by pytorch tutorial (especially LBFGS optimizer)! This tutorial also helps pick content vs. style weights because
 		# they are on very different orders of magnitude
 		# Source code credit: https://pytorch.org/tutorials/advanced/neural_style_tutorial.html
 		#
